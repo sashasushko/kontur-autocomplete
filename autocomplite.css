@@ -1,0 +1,79 @@
+.autocomplite {
+	position: absolute;
+	border: 1px solid rgba(0,0,0,0.1);
+	background-color: #fff;
+	box-shadow: 0 3px 16px rgba(0,0,0,0.1);
+	box-sizing: border-box;
+}
+
+.autocomplite * {
+	box-sizing: inherit;
+}
+
+.autocomplite--state--hide {
+	display: none;
+}
+
+.autocomplite__results {}
+
+.autocomplite__items {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.autocomplite__item {
+	padding: 4px 7px;
+	color: #404040;
+}
+
+.autocomplite__item:hover,
+.autocomplite__item--state--hover {
+	background-color: #5199db;
+	color: #fff;
+}
+
+.autocomplite__notifications {
+	max-width: 360px;
+}
+
+.autocomplite__notification {
+	color: #9b9b9b;
+}
+
+.autocomplite__notification--state--loading {
+	position: relative;
+	padding: 7px 8px 8px 30px;
+}
+
+.autocomplite__notification--state--loading::before {
+	content: '';
+	position: absolute;
+	top: 9px;
+	left: 10px;
+	width: 14px;
+	height: 14px;
+	background-image: url("data:image/svg+xml,%3Csvg width='16px' height='16px'%3E%3Cpath fill='none' stroke='%23a0a0a0' stroke-width='2' d='M 7 13 A 6 6 0 1 0 1 7'%3E%3C/path%3E%3C/svg%3E");
+	animation: spin 2s linear infinite;
+}
+
+.autocomplite__notification--state--connection-error,
+.autocomplite__notification--state--no-results {
+	padding: 6px 8px;
+}
+
+.autocomplite__notification--state--lot-results {
+	padding: 7px 7px 9px;
+	color: #a7a7a7;
+	font-size: 0.85em;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}

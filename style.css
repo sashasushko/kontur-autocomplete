@@ -1,0 +1,102 @@
+/* Глобальные стили */
+html {
+	box-sizing: border-box;
+	font: 14px/1.43 'Segoe UI', sans-serif;
+}
+
+* {
+	box-sizing: inherit;
+}
+
+/* Форма */
+.form {
+	margin: 4rem 6rem;
+}
+
+.form__submit {
+	clear: both;
+	margin-top: 1.5rem;
+	margin-left: 10rem;
+}
+
+
+/* Поле формы */
+.field {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.field::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.field__label {
+	display: block;
+	float: left;
+	clear: left;
+	padding-top: 6px;
+	padding-right: 1rem;
+	width: 10rem;
+}
+
+.field__control {
+	display: block;
+}
+
+.field__error {
+	float: left;
+	clear: left;
+	margin-top: 5px;
+	margin-left: 10rem;
+	color: #e40e23;
+}
+
+
+/* Поле ввода */
+.input {
+	padding: 6px 8px;
+	width: 100%;
+	max-width: 322px;
+	height: 34px;
+	border: 1px solid rgba(0,0,0,0.1);
+	outline: none;
+	color: #404040;
+	font: inherit;
+	box-sizing: border-box;
+}
+
+.input::-webkit-input-placeholder { color: #b7b7b7; }
+.input::-moz-placeholder { color: #b7b7b7; }
+.input:-ms-input-placeholder { color: #b7b7b7; }
+
+.input:focus,
+.input--state--error,
+.input--state--warning {
+	padding: 5px 7px;
+	border-width: 2px;
+}
+
+.input:not(.input--state--error):not(.input--state--warning):focus {
+	border-color: #5199db;
+}
+
+.input:focus::-webkit-input-placeholder { color: #dfdfdf; }
+.input:focus::-moz-placeholder { color: #dfdfdf; }
+.input:focus:-ms-input-placeholder { color: #dfdfdf; }
+
+.input--state--error {
+	border-color: #da0c09;
+}
+
+.input--state--warning {
+	border-color: #f69c00;
+}
+
+.input[disabled] {
+	background-color: #f1f1f1;
+	color: #b7b7b7;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Autocomplite</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="autocomplite.css">
+</head>
+
+<body>
+
+	<form class="form" onsubmit="alert('Форма отправлена'); event.preventDefault();">
+
+		<h3>Форма с автокомплитом</h3>
+
+		<p class="field">
+			<label class="field__label" for="name">Имя и фамилия</label>
+			<input class="field__control input" id="name" type="text" placeholder="Например, Иванов Иван Иванович">
+		</p>
+
+		<p class="field">
+			<label class="field__label" for="city">Город</label>
+			<input class="field__control input js--autocomplite-city" id="city" type="text" placeholder="Начните вводить название" autocomplete="off">
+		</p>
+
+		<p class="field">
+			<label class="field__label" for="position">Должность</label>
+			<input class="field__control input" id="position" type="text" placeholder="Например, мэр">
+		</p>
+
+		<p class="field">
+			<label class="field__label" for="vocation">Призвание</label>
+			<input class="field__control input" id="vocation" type="text" placeholder="Например, президент" disabled>
+		</p>
+
+		<button class="form__submit" type="submit">Отправить</button>
+
+	</form>
+
+	<script src="validation.js"></script>
+	<script src="autocomplite.js"></script>
+	<script>
+		// Валидация (примера ради)
+		var validateControls = document.querySelectorAll('.field__control');
+		var validation = new Validation();
+		validation.init(validateControls);
+
+		// Автокомплит
+		var inputCity = document.querySelector('.js--autocomplite-city');
+		var autocompliteCity = new AutocompliteCity();
+		autocompliteCity.init(inputCity, validation.error);
+	</script>
+
+</body>
+
+</html>
